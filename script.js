@@ -11,11 +11,12 @@ function updateTotal(amount) {
 
 function createCartItem(name, price) {
 	const cartItem = document.createElement("li");
+	cartItem.classList.add("list-group-item", "d-flex", "justify-content-between", "align-items-center");
 	cartItem.textContent = `${name} - ₹${price} `;
 
 	const removeButton = document.createElement("button");
 	removeButton.textContent = "Remove";
-	removeButton.classList.add("remove-btn");
+	removeButton.classList.add("btn", "btn-outline-danger", "btn-sm", "ms-2", "remove-btn");
 	removeButton.setAttribute("data-price", price);
 
 	cartItem.append(removeButton);
